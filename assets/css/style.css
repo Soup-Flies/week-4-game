@@ -1,0 +1,25 @@
+body {
+	padding: 20px;
+}
+
+.unit {
+	height: 150px;
+	width: 150px;
+	margin: 5px;
+	padding: 2px;
+	border: 10px double #AA2;
+}
+
+
+.unit:hover {
+	padding: 7px;
+}
+
+#taunter {
+	visibility: hidden;
+	margin-left: 20px;
+}
+
+#frame {
+	height: 450px;
+}
