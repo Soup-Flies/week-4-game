@@ -7,6 +7,7 @@ var selected;
 var base = 0;
 var imNotDead;
 var imVeryDead;
+var wins = 0;
 
 function Character(attack, counter, health) {
 	this.attack = attack;
@@ -62,13 +63,12 @@ function unitBuilder(selected, test) {
 			break;
 
 		case "peasants":
-			base = 10;
-			alignment = new Character(base, 5, 100);
+			base = 5;
+			alignment = new Character(base, 5, 80);
 			break;
 		
 		default:
 			console.log(taunts[Math.floor(Math.random() * taunts.length)]);;
-			break;
 	}
 	if (test === 0) {
 		chosenCharacter = alignment;
@@ -91,6 +91,7 @@ function taunt() {
 	chosenCharacter.health -= currentEnemy.counter;
 
 	if (chosenCharacter.health <= 0) {
+		//alert to determine play again
 		winFight(false);
 			
 		}
@@ -106,16 +107,24 @@ function winFight(winState) {
 		$(imVeryDead).css("visibility", "hidden");
 		enemy = false;
 		imVeryDead = null;
+		wins++;
+		if (wins === 5) {
+			winGame();
+		}
 	} else {
-		$("#character").empty();
+		$("#character > div").toggleClass("char character");
+		$(imNotDead).append($("#character > div"));
 		$("#enemy").empty();
 		enemy = false;
 		character = false;
 	}
-	
-
 }
 
+function winGame() {
+	$(document).ready(function() {
+		alert("you won! woo");
+	});
+}
 
 
 $(document).ready(function() {
