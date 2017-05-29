@@ -1,6 +1,10 @@
 body {
+	height: 100vh;
 	padding: 20px;
 	background: url(../images/castle.jpg);
+	background-size: cover;
+	color: #99D;
+	font-size: 16px;
 }
 
 .unit {
