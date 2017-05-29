@@ -1,4 +1,5 @@
 body {
+	user-select: none;
 	height: 100vh;
 	padding: 20px;
 	background: url(../images/castle.jpg);
@@ -27,4 +28,9 @@ body {
 
 #frame {
 	height: 450px;
+}
+
+#instruction {
+	height: 70px;
+	margin-bottom: 13px;
 }
