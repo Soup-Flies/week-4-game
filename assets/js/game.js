@@ -34,6 +34,7 @@ function characterSelect(unit) {
 }
 
 function enemySelect(unit) {
+	$("#combat").empty();
 	dead = false;
 	if ( $(unit).hasClass("character") ) {
 		return;
